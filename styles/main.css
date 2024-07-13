@@ -1,8 +1,15 @@
+/* Resets */
 * {
   padding: 0;
   margin: 0;
   min-width: 0;
 }
+
+/* Resets end */
+
+/* 
+  General styles 
+*/
 
 body {
   background-color: #ffffff;
@@ -20,6 +27,18 @@ body {
   padding-top: 5rem;
 }
 
+.subtitle {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* End of general styles */
+
+
+/*
+  Personal info
+*/
 .info-personal {
   display: flex;
   justify-content: space-between;
@@ -42,12 +61,8 @@ body {
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  font-size: 24px;
-}
-
-.info h3 {
-  margin-top: 2rem;
-  font-size: 20px;
+  font-size: 25px;
+  text-transform: uppercase;
 }
 
 .line {
@@ -76,6 +91,10 @@ body {
   margin-bottom: 2rem;
 }
 
+/*
+  Skills section
+*/
+
 .card {
   width: 33%;
   background-color: #e4e4e4;
@@ -84,7 +103,7 @@ body {
   margin-right: 1rem;
 }
 
-.card .circle-icon {
+.circle-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,6 +113,7 @@ body {
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
+  transition: transform 0.5s ease-in-out;
 }
 
 .card h3 {
@@ -109,6 +129,19 @@ body {
   font-size: 14px;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .circle-icon {
+  background-color: #000000;
+  transform: rotate(360deg);
+}
+
+
+/*
+  Hobbies Section
+*/
 .card-hobbie {
   width: 33%;
   margin-right: 20px;
@@ -125,19 +158,26 @@ body {
 
 .card-hobbie-cover {
   padding: 40px 0px;
+  height: 36%;
+  background-size: cover;
 }
 
 .card-hobbie-cover:hover {
-  background-color: #00000054;
+  background-color: #00000077;
   width: 100%;
   border-radius: 10px;
   color: #ffffff;
 }
 
 .card-hobbie h4 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  letter-spacing: 10px;
 }
+
+/*
+  Motivations Section
+*/
 
 .motivations {
   align-items: center;
@@ -161,6 +201,10 @@ body {
   margin-left: 40px;
 }
 
+
+/*
+  Initial effect
+*/
 .effect-left {
   transform: translateX(-200%);
   animation: slide-in 0.6s ease-out forwards;
@@ -196,27 +240,48 @@ body {
   }
 }
 
+/* 
+  Responsive Design 
+*/
+@media (min-width: 701px) and (max-width: 920px) {
+  .skills,
+  .hobbies,
+  .motivations {
+    padding: 40px;
+  }
+}
+
 @media (max-width: 700px) {
-  body, .container {
+  body,
+  .container {
     overflow-x: hidden;
   }
-  .info-personal {
-  }
 
-  .card, .card-hobbie{
+  .card,
+  .card-hobbie {
     width: 80%;
     margin-bottom: 1rem;
   }
 
-  .info-personal, .motivations, .cards-container, .hobbies-container {
+  .info-personal,
+  .motivations,
+  .cards-container,
+  .hobbies-container {
     flex-direction: column;
   }
 
-  .info-personal-col, .col {
-    width:80%;
+  .info-personal-col,
+  .col {
+    width: 80%;
   }
-}
 
-.skills,
-.hobbies {
+  .cards-container,
+  .hobbies-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title-line {
+    margin-left: 1rem;
+  }
 }
